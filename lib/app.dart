@@ -86,12 +86,7 @@ class _AuthGateState extends State<_AuthGate> {
 
       if (!mounted) return;
 
-      if (prev == null && user != null) {
-        WidgetsBinding.instance.addPostFrameCallback((_) {
-          if (!mounted) return;
-          AppSnackBar.success(context, 'Logged in successfully');
-        });
-      } else if (prev != null && user == null) {
+      if (prev != null && user == null) {
         WidgetsBinding.instance.addPostFrameCallback((_) {
           if (!mounted) return;
           AppSnackBar.info(context, 'Logged out successfully');
